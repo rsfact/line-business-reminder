@@ -1,0 +1,4 @@
+{user_name} さんから<https://chat.line.biz|LINE Chat>にメッセージが届きました。
+```
+{message}
+```
