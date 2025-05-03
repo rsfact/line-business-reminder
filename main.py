@@ -5,12 +5,11 @@ import settings
 
 app = FastAPI(
     title="LINE Business Reminder",
-    root_path=settings.BASE_PATH,
     openapi_url=f"{settings.BASE_PATH}/openapi.json",
     docs_url=f"{settings.BASE_PATH}/docs"
 )
 
-api_router = APIRouter(prefix="/api")
+api_router = APIRouter(prefix=f"{settings.BASE_PATH}/api")
 api_router.include_router(webhooks.router, prefix="/webhook", tags=["Webhook"])
 
 app.include_router(api_router)
